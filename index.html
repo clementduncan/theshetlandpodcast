@@ -191,11 +191,51 @@
             animation-duration: 1.25s;
         }
 
+        .countdown {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0.6rem;
+            margin-top: 0.2rem;
+        }
+
+        .countdown.hidden {
+            display: none;
+        }
+
+        .time {
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            border-radius: 12px;
+            padding: 0.6rem 0.35rem;
+            background: rgba(0, 0, 0, 0.13);
+        }
+
+        .num {
+            display: block;
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: var(--ink);
+        }
+
+        .label {
+            display: block;
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--muted);
+            margin-top: 0.15rem;
+        }
+
         .soon-note {
             color: var(--muted);
             line-height: 1.6;
             font-size: 0.98rem;
             margin-top: 0.2rem;
+        }
+
+        .soon-note.live {
+            color: var(--ink);
+            font-weight: 600;
         }
 
         .foot {
@@ -288,7 +328,13 @@
 
                 <div class="panel" aria-label="Coming soon information">
                     <h2>Coming Soon</h2>
-                    <p class="soon-note">No launch date yet. Updates and first-episode announcements will be shared here soon.</p>
+                    <div class="countdown" id="countdown">
+                        <div class="time"><span class="num" data-unit="days">00</span><span class="label">Days</span></div>
+                        <div class="time"><span class="num" data-unit="hours">00</span><span class="label">Hours</span></div>
+                        <div class="time"><span class="num" data-unit="minutes">00</span><span class="label">Minutes</span></div>
+                        <div class="time"><span class="num" data-unit="seconds">00</span><span class="label">Seconds</span></div>
+                    </div>
+                    <p class="soon-note" id="launch-note">Launching at 7:40am on Sunday 19 April 2026.</p>
                 </div>
             </div>
 
@@ -300,7 +346,10 @@
     </main>
 
     <script>
+        const launchDate = new Date("2026-04-19T07:40:00+01:00");
         const wave = document.getElementById("wave");
+        const countdown = document.getElementById("countdown");
+        const launchNote = document.getElementById("launch-note");
         for (let i = 0; i < 20; i += 1) {
             const bar = document.createElement("span");
             bar.className = "bar";
@@ -308,6 +357,42 @@
             bar.style.animationDelay = `${Math.random() * 1.4}s`;
             wave.appendChild(bar);
         }
+
+        const units = {
+            days: document.querySelector('[data-unit="days"]'),
+            hours: document.querySelector('[data-unit="hours"]'),
+            minutes: document.querySelector('[data-unit="minutes"]'),
+            seconds: document.querySelector('[data-unit="seconds"]')
+        };
+
+        function pad(value) {
+            return String(value).padStart(2, "0");
+        }
+
+        function renderCountdown() {
+            const now = Date.now();
+            const diff = Math.max(0, launchDate.getTime() - now);
+
+            if (diff === 0) {
+                countdown.classList.add("hidden");
+                launchNote.textContent = "The Shetland Podcast has launched.";
+                launchNote.classList.add("live");
+                return;
+            }
+
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+            const minutes = Math.floor((diff / (1000 * 60)) % 60);
+            const seconds = Math.floor((diff / 1000) % 60);
+
+            units.days.textContent = pad(days);
+            units.hours.textContent = pad(hours);
+            units.minutes.textContent = pad(minutes);
+            units.seconds.textContent = pad(seconds);
+        }
+
+        renderCountdown();
+        setInterval(renderCountdown, 1000);
 
         for (let i = 0; i < 12; i += 1) {
             const bubble = document.createElement("span");
