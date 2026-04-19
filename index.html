@@ -111,6 +111,34 @@
             margin-bottom: 1rem;
         }
 
+        .hero {
+            display: flex;
+            align-items: center;
+            gap: 1.3rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .hero-copy {
+            min-width: 0;
+        }
+
+        .brand-wrap {
+            flex-shrink: 0;
+        }
+
+        .brand-mark {
+            display: block;
+            width: min(260px, 62vw);
+            height: auto;
+            border-radius: 14px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow:
+                0 10px 28px rgba(0, 0, 0, 0.35),
+                0 0 24px rgba(112, 227, 193, 0.16);
+            background: rgba(255, 255, 255, 0.06);
+            padding: 0.45rem;
+        }
+
         .dot {
             width: 0.5rem;
             aspect-ratio: 1;
@@ -127,7 +155,7 @@
             letter-spacing: 0.02em;
             text-wrap: balance;
             max-width: 11ch;
-            margin-bottom: 1.5rem;
+            margin-bottom: 0;
         }
 
         .accent {
@@ -357,6 +385,16 @@
                 grid-template-columns: 1fr;
             }
 
+            .hero {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+
+            .brand-wrap {
+                margin-bottom: 0;
+            }
+
             .foot {
                 flex-direction: column;
                 align-items: flex-start;
@@ -368,8 +406,15 @@
     <div class="noise" aria-hidden="true"></div>
     <main class="page">
         <section class="card" aria-labelledby="title">
-            <p class="badge"><span class="dot" aria-hidden="true"></span> Now Live</p>
-            <h1 id="title">The Shetland <span class="accent">Podcast</span></h1>
+            <div class="hero">
+                <div class="brand-wrap">
+                    <img class="brand-mark" src="brand.png" alt="The Shetland Podcast brand mark">
+                </div>
+                <div class="hero-copy">
+                    <p class="badge"><span class="dot" aria-hidden="true"></span> Now Live</p>
+                    <h1 id="title">The Shetland <span class="accent">Podcast</span></h1>
+                </div>
+            </div>
 
             <div class="episode-info">
                 <div class="episode-title">Sheeks About Shetland — Episode 1</div>
