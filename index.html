@@ -126,6 +126,7 @@
             letter-spacing: 0.02em;
             text-wrap: balance;
             max-width: 11ch;
+            margin-bottom: 1.5rem;
         }
 
         .accent {
@@ -143,7 +144,7 @@
         .grid {
             margin-top: 1.8rem;
             display: grid;
-            grid-template-columns: 1.15fr 0.85fr;
+            grid-template-columns: 1fr;
             gap: 1.2rem;
             align-items: stretch;
         }
@@ -161,6 +162,32 @@
             text-transform: uppercase;
             color: #e5ecef;
             margin-bottom: 0.65rem;
+        }
+
+        .episode-info {
+            border: 1px solid rgba(255, 255, 255, 0.16);
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 18px;
+            padding: 1.2rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .episode-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 0.8rem;
+        }
+
+        .episode-description {
+            color: var(--muted);
+            line-height: 1.7;
+            font-size: 0.95rem;
+        }
+
+        .episode-description strong {
+            color: var(--ink);
+            font-weight: 600;
         }
 
         .wave {
@@ -256,6 +283,97 @@
             color: #fff;
         }
 
+        .youtube-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .youtube-preview {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            border-radius: 12px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .youtube-preview:hover {
+            transform: scale(1.02);
+        }
+
+        .youtube-preview img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .youtube-play {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 0, 0, 0.3);
+            transition: background 0.3s ease;
+        }
+
+        .youtube-preview:hover .youtube-play {
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .play-button {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            background: var(--accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 24px rgba(255, 209, 102, 0.4);
+            transition: transform 0.3s ease;
+        }
+
+        .youtube-preview:hover .play-button {
+            transform: scale(1.1);
+        }
+
+        .play-button::after {
+            content: "";
+            width: 0;
+            height: 0;
+            border-left: 16px solid #041423;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            margin-left: 3px;
+        }
+
+        .youtube-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.8rem 1.6rem;
+            background: var(--accent);
+            color: var(--bg-deep);
+            border-radius: 999px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid var(--accent);
+        }
+
+        .youtube-link:hover {
+            background: transparent;
+            color: var(--accent);
+            transform: scale(1.05);
+        }
+
+        .youtube-icon {
+            font-size: 1.2em;
+        }
+
         .float {
             position: absolute;
             width: 14px;
@@ -314,86 +432,40 @@
     <div class="noise" aria-hidden="true"></div>
     <main class="page">
         <section class="card" aria-labelledby="title">
-            <p class="badge"><span class="dot" aria-hidden="true"></span> New show in production</p>
+            <p class="badge"><span class="dot" aria-hidden="true"></span> Now Live</p>
             <h1 id="title">The Shetland <span class="accent">Podcast</span></h1>
-            <p class="subtitle">
-                Tune in soon for conversations, culture, and coastal life from the Shetland Isles.
-            </p>
 
-            <div class="grid">
-                <div class="panel" aria-label="Audio visual">
-                    <h2>Podcast recording</h2>
-                    <div class="wave" id="wave"></div>
-                </div>
-
-                <div class="panel" aria-label="Coming soon information">
-                    <h2>Coming Soon</h2>
-                    <div class="countdown" id="countdown">
-                        <div class="time"><span class="num" data-unit="days">00</span><span class="label">Days</span></div>
-                        <div class="time"><span class="num" data-unit="hours">00</span><span class="label">Hours</span></div>
-                        <div class="time"><span class="num" data-unit="minutes">00</span><span class="label">Minutes</span></div>
-                        <div class="time"><span class="num" data-unit="seconds">00</span><span class="label">Seconds</span></div>
-                    </div>
-                    <p class="soon-note" id="launch-note">Launching at 7:40am on Sunday 19 April 2026.</p>
-                </div>
+            <div class="episode-info">
+                <div class="episode-title">Sheeks About Shetland — Episode 1</div>
+                <p class="episode-description">
+                    <strong>Jane and Pete introduce the first episode of Sheeks About Shetland.</strong>
+                </p>
+                <p class="episode-description" style="margin-top: 0.8rem;">
+                    Jane is a seasoned broadcaster with BBC Radio Shetland while Pete has reported for The Shetland Times, BBC Radio Shetland and Shetland News. The pair feel there is a gap in the islands' media landscape for longer conversations unrestricted by the time and space limitations of other print and broadcast media.
+                </p>
             </div>
 
-            <!-- <div class="foot">
-                <p>Launching soon.</p>
-                <span class="chip">Shetland Isles</span>
-            </div> -->
+            <div class="grid">
+                <div class="panel" aria-label="Watch now">
+                    <h2>Watch Episode 1</h2>
+                    <div class="youtube-section">
+                        <a href="https://www.youtube.com/watch?v=iRPLMevzL8o" target="_blank" rel="noopener noreferrer" class="youtube-preview" aria-label="Watch on YouTube">
+                            <img src="https://img.youtube.com/vi/iRPLMevzL8o/maxresdefault.jpg" alt="YouTube video thumbnail">
+                            <div class="youtube-play">
+                                <div class="play-button"></div>
+                            </div>
+                        </a>
+                        <a href="https://www.youtube.com/watch?v=iRPLMevzL8o" target="_blank" rel="noopener noreferrer" class="youtube-link">
+                            <span class="youtube-icon">▶</span>
+                            <span>Watch on YouTube</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
 
     <script>
-        const launchDate = new Date("2026-04-19T07:40:00+01:00");
-        const wave = document.getElementById("wave");
-        const countdown = document.getElementById("countdown");
-        const launchNote = document.getElementById("launch-note");
-        for (let i = 0; i < 20; i += 1) {
-            const bar = document.createElement("span");
-            bar.className = "bar";
-            bar.style.height = `${18 + Math.random() * 56}px`;
-            bar.style.animationDelay = `${Math.random() * 1.4}s`;
-            wave.appendChild(bar);
-        }
-
-        const units = {
-            days: document.querySelector('[data-unit="days"]'),
-            hours: document.querySelector('[data-unit="hours"]'),
-            minutes: document.querySelector('[data-unit="minutes"]'),
-            seconds: document.querySelector('[data-unit="seconds"]')
-        };
-
-        function pad(value) {
-            return String(value).padStart(2, "0");
-        }
-
-        function renderCountdown() {
-            const now = Date.now();
-            const diff = Math.max(0, launchDate.getTime() - now);
-
-            if (diff === 0) {
-                countdown.classList.add("hidden");
-                launchNote.textContent = "The Shetland Podcast has launched.";
-                launchNote.classList.add("live");
-                return;
-            }
-
-            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-            const minutes = Math.floor((diff / (1000 * 60)) % 60);
-            const seconds = Math.floor((diff / 1000) % 60);
-
-            units.days.textContent = pad(days);
-            units.hours.textContent = pad(hours);
-            units.minutes.textContent = pad(minutes);
-            units.seconds.textContent = pad(seconds);
-        }
-
-        renderCountdown();
-        setInterval(renderCountdown, 1000);
-
         for (let i = 0; i < 12; i += 1) {
             const bubble = document.createElement("span");
             bubble.className = "float";
