@@ -170,42 +170,42 @@
             font-size: clamp(0.98rem, 1.8vw, 1.08rem);
         }
 
-        .grid {
-            margin-top: 1.8rem;
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1.2rem;
-            align-items: stretch;
-        }
-
-        .panel {
-            border: 1px solid rgba(255, 255, 255, 0.16);
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 18px;
-            padding: 1rem 1.1rem;
-        }
-
-        .panel h2 {
-            font-size: 0.92rem;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-            color: #e5ecef;
-            margin-bottom: 0.65rem;
-        }
-
-        .episode-info {
+        .episode-card {
             border: 1px solid rgba(255, 255, 255, 0.16);
             background: rgba(255, 255, 255, 0.05);
             border-radius: 18px;
             padding: 1.2rem;
-            margin-bottom: 0.2rem;
+        }
+
+        .episode-card h2 {
+            font-size: 0.92rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: #e5ecef;
+            margin: 1.1rem 0 0.65rem;
+        }
+
+        .episode-header {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            gap: 1rem;
+            margin-bottom: 0.8rem;
         }
 
         .episode-title {
             font-size: 1.1rem;
             font-weight: 600;
             color: var(--accent);
-            margin-bottom: 0.8rem;
+            margin-bottom: 0;
+        }
+
+        .episode-date {
+            font-size: 0.82rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: var(--muted);
+            white-space: nowrap;
         }
 
         .episode-description {
@@ -217,6 +217,12 @@
         .episode-description strong {
             color: var(--ink);
             font-weight: 600;
+        }
+
+        .episode-block {
+            margin-top: 1.2rem;
+            padding-top: 1.2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.14);
         }
 
         .wave {
@@ -252,6 +258,7 @@
             flex-direction: column;
             align-items: center;
             gap: 1rem;
+            margin-top: 1.1rem;
         }
 
         .youtube-preview {
@@ -381,14 +388,16 @@
         }
 
         @media (max-width: 780px) {
-            .grid {
-                grid-template-columns: 1fr;
-            }
-
             .hero {
                 flex-direction: column;
                 align-items: flex-start;
                 gap: 1rem;
+            }
+
+            .episode-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.35rem;
             }
 
             .brand-wrap {
@@ -411,24 +420,69 @@
                     <img class="brand-mark" src="brand.png" alt="The Shetland Podcast brand mark">
                 </div>
                 <div class="hero-copy">
-                    <p class="badge"><span class="dot" aria-hidden="true"></span> Episode 1 now available</p>
+                    <p class="badge"><span class="dot" aria-hidden="true"></span> Episodes 1 to 3 now available</p>
                     <h1 id="title">The Shetland <span class="accent">Podcast</span></h1>
                 </div>
             </div>
 
-            <div class="episode-info">
-                <div class="episode-title">Sheeks About Shetland — Episode 1</div>
+            <div class="episode-card">
+                <div class="episode-header">
+                    <div class="episode-title">Sheeks About Shetland — Episode 3</div>
+                    <div class="episode-date">28 Apr 2026</div>
+                </div>
                 <p class="episode-description">
-                    <strong>Jane and Pete introduce the first episode of Sheeks About Shetland.</strong>
+                    In the second of our conversations with election candidates, Jane and Pete sheeks with Brian Nugent whose party Sovereignty has teamed up with other parties to form The Alliance to Liberate Scotland in a bid to challenge the SNP and the Greens on their "weak stance" on fighting for Scottish independence.
                 </p>
-                <p class="episode-description" style="margin-top: 0.8rem;">
-                    Jane is a seasoned broadcaster with BBC Radio Shetland while Pete has reported for The Shetland Times, BBC Radio Shetland and Shetland News. The pair feel there is a gap in the islands' media landscape for longer conversations unrestricted by the time and space limitations of other print and broadcast media.
-                </p>
+                <div class="youtube-section">
+                    <a href="https://www.youtube.com/watch?v=PGaCh4kaGic&t" target="_blank" rel="noopener noreferrer" class="youtube-preview" aria-label="Watch Episode 3 on YouTube">
+                        <img src="https://img.youtube.com/vi/PGaCh4kaGic/maxresdefault.jpg" alt="Episode 3 YouTube video thumbnail">
+                        <div class="youtube-play">
+                            <div class="play-button"></div>
+                        </div>
+                    </a>
+                    <a href="https://www.youtube.com/watch?v=PGaCh4kaGic&t" target="_blank" rel="noopener noreferrer" class="youtube-link">
+                        <span class="youtube-icon">▶</span>
+                        <span>Watch on YouTube</span>
+                    </a>
+                </div>
             </div>
 
-            <div class="grid">
-                <div class="panel" aria-label="Watch now">
-                    <h2>Watch Episode 1</h2>
+            <div class="episode-block">
+                <div class="episode-card">
+                    <div class="episode-header">
+                        <div class="episode-title">Sheeks About Shetland — Episode 2</div>
+                        <div class="episode-date">27 Apr 2026</div>
+                    </div>
+                    <p class="episode-description">
+                        In the first of a series of conversations with Shetland's election candidates, Jane and Pete have a sheeks with Alex Armitage of the Scottish Greens about his background, his campaign to build a movement and how he feels about the rise of the far right and the attacks he has come under recently.
+                    </p>
+                    <div class="youtube-section">
+                        <a href="https://www.youtube.com/watch?v=6TBgBoV8JH0" target="_blank" rel="noopener noreferrer" class="youtube-preview" aria-label="Watch Episode 2 on YouTube">
+                            <img src="https://img.youtube.com/vi/6TBgBoV8JH0/maxresdefault.jpg" alt="Episode 2 YouTube video thumbnail">
+                            <div class="youtube-play">
+                                <div class="play-button"></div>
+                            </div>
+                        </a>
+                        <a href="https://www.youtube.com/watch?v=6TBgBoV8JH0" target="_blank" rel="noopener noreferrer" class="youtube-link">
+                            <span class="youtube-icon">▶</span>
+                            <span>Watch on YouTube</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="episode-block">
+                <div class="episode-card">
+                    <div class="episode-header">
+                        <div class="episode-title">Sheeks About Shetland — Episode 1</div>
+                        <div class="episode-date">19 Apr 2026</div>
+                    </div>
+                    <p class="episode-description">
+                        Jane and Pete introduce the first episode of Sheeks About Shetland.
+                    </p>
+                    <p class="episode-description" style="margin-top: 0.8rem;">
+                        Jane is a seasoned broadcaster with BBC Radio Shetland while Pete has reported for The Shetland Times, BBC Radio Shetland and Shetland News. The pair feel there is a gap in the islands' media landscape for longer conversations unrestricted by the time and space limitations of other print and broadcast media.
+                    </p>
                     <div class="youtube-section">
                         <a href="https://www.youtube.com/watch?v=iRPLMevzL8o" target="_blank" rel="noopener noreferrer" class="youtube-preview" aria-label="Watch on YouTube">
                             <img src="https://img.youtube.com/vi/iRPLMevzL8o/maxresdefault.jpg" alt="YouTube video thumbnail">
