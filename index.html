@@ -170,59 +170,56 @@
             font-size: clamp(0.98rem, 1.8vw, 1.08rem);
         }
 
+        .episodes-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-top: 0;
+        }
+
         .episode-card {
             border: 1px solid rgba(255, 255, 255, 0.16);
             background: rgba(255, 255, 255, 0.05);
             border-radius: 18px;
-            padding: 1.2rem;
-        }
-
-        .episode-card h2 {
-            font-size: 0.92rem;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-            color: #e5ecef;
-            margin: 1.1rem 0 0.65rem;
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
         }
 
         .episode-header {
             display: flex;
             align-items: baseline;
             justify-content: space-between;
-            gap: 1rem;
-            margin-bottom: 0.8rem;
+            gap: 0.6rem;
+            margin-bottom: 0.6rem;
         }
 
         .episode-title {
-            font-size: 1.1rem;
+            font-size: 0.95rem;
             font-weight: 600;
             color: var(--accent);
             margin-bottom: 0;
         }
 
         .episode-date {
-            font-size: 0.82rem;
+            font-size: 0.75rem;
             letter-spacing: 0.05em;
             text-transform: uppercase;
             color: var(--muted);
             white-space: nowrap;
+            flex-shrink: 0;
         }
 
         .episode-description {
             color: var(--muted);
-            line-height: 1.7;
-            font-size: 0.95rem;
+            line-height: 1.6;
+            font-size: 0.88rem;
+            flex-grow: 1;
         }
 
         .episode-description strong {
             color: var(--ink);
             font-weight: 600;
-        }
-
-        .episode-block {
-            margin-top: 1.2rem;
-            padding-top: 1.2rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.14);
         }
 
         .wave {
@@ -257,8 +254,8 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 1rem;
-            margin-top: 1.1rem;
+            gap: 0.7rem;
+            margin-top: 0.9rem;
         }
 
         .youtube-preview {
@@ -295,50 +292,26 @@
             background: rgba(0, 0, 0, 0.5);
         }
 
-        .play-button {
-            width: 64px;
-            height: 64px;
-            border-radius: 50%;
-            background: var(--accent);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 8px 24px rgba(255, 209, 102, 0.4);
-            transition: transform 0.3s ease;
-        }
-
-        .youtube-preview:hover .play-button {
-            transform: scale(1.1);
-        }
-
-        .play-button::after {
-            content: "";
-            width: 0;
-            height: 0;
-            border-left: 16px solid #041423;
-            border-top: 10px solid transparent;
-            border-bottom: 10px solid transparent;
-            margin-left: 3px;
-        }
-
         .youtube-link {
             display: inline-flex;
             align-items: center;
             gap: 0.6rem;
-            padding: 0.8rem 1.6rem;
+            padding: 0.7rem 1.3rem;
             background: var(--accent);
             color: var(--bg-deep);
             border-radius: 999px;
             text-decoration: none;
             font-weight: 600;
+            font-size: 0.9rem;
             transition: all 0.3s ease;
             border: 2px solid var(--accent);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
         }
 
-        .youtube-link:hover {
+        .youtube-preview:hover .youtube-link {
             background: transparent;
             color: var(--accent);
-            transform: scale(1.05);
+            transform: scale(1.07);
         }
 
         .youtube-icon {
@@ -397,7 +370,11 @@
             .episode-header {
                 flex-direction: column;
                 align-items: flex-start;
-                gap: 0.35rem;
+                gap: 0.25rem;
+            }
+
+            .episodes-grid {
+                grid-template-columns: 1fr;
             }
 
             .brand-wrap {
@@ -420,34 +397,55 @@
                     <img class="brand-mark" src="brand.png" alt="The Shetland Podcast brand mark">
                 </div>
                 <div class="hero-copy">
-                    <p class="badge"><span class="dot" aria-hidden="true"></span> Episodes 1 to 3 now available</p>
+                    <p class="badge"><span class="dot" aria-hidden="true"></span> Episodes 1 to 4 now available</p>
                     <h1 id="title">The Shetland <span class="accent">Podcast</span></h1>
                 </div>
             </div>
 
-            <div class="episode-card">
-                <div class="episode-header">
-                    <div class="episode-title">Sheeks About Shetland — Episode 3</div>
-                    <div class="episode-date">28 Apr 2026</div>
-                </div>
-                <p class="episode-description">
-                    In the second of our conversations with election candidates, Jane and Pete sheeks with Brian Nugent whose party Sovereignty has teamed up with other parties to form The Alliance to Liberate Scotland in a bid to challenge the SNP and the Greens on their "weak stance" on fighting for Scottish independence.
-                </p>
-                <div class="youtube-section">
-                    <a href="https://www.youtube.com/watch?v=PGaCh4kaGic&t" target="_blank" rel="noopener noreferrer" class="youtube-preview" aria-label="Watch Episode 3 on YouTube">
-                        <img src="https://img.youtube.com/vi/PGaCh4kaGic/maxresdefault.jpg" alt="Episode 3 YouTube video thumbnail">
-                        <div class="youtube-play">
-                            <div class="play-button"></div>
-                        </div>
-                    </a>
-                    <a href="https://www.youtube.com/watch?v=PGaCh4kaGic&t" target="_blank" rel="noopener noreferrer" class="youtube-link">
-                        <span class="youtube-icon">▶</span>
-                        <span>Watch on YouTube</span>
-                    </a>
-                </div>
-            </div>
+            <div class="episodes-grid">
 
-            <div class="episode-block">
+                <div class="episode-card">
+                    <div class="episode-header">
+                        <div class="episode-title">Sheeks About Shetland — Episode 4</div>
+                        <div class="episode-date">5 May 2026</div>
+                    </div>
+                    <p class="episode-description">
+                        In our latest conversation with the candidates, Jane and Pete sheeks with Hannah Mary Goodlad of the SNP who has been campaigning to win the Shetland seat from the LibDems for the past year. We cover a lot of ground in this episode, where Hannah Mary outlines her vision of a confident Shetland making the most of its strengths, including its wealth, based on her experience of working in industry, living in Scandinavia and visiting the Faroe Islands.
+                    </p>
+                    <div class="youtube-section">
+                        <a href="https://www.youtube.com/watch?v=vfxVJDTayY8" target="_blank" rel="noopener noreferrer" class="youtube-preview" aria-label="Watch Episode 4 on YouTube">
+                            <img src="https://img.youtube.com/vi/vfxVJDTayY8/maxresdefault.jpg" alt="Episode 4 YouTube video thumbnail">
+                            <div class="youtube-play">
+                                <span class="youtube-link">
+                                    <span class="youtube-icon">▶</span>
+                                    <span>Watch on YouTube</span>
+                                </span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="episode-card">
+                    <div class="episode-header">
+                        <div class="episode-title">Sheeks About Shetland — Episode 3</div>
+                        <div class="episode-date">28 Apr 2026</div>
+                    </div>
+                    <p class="episode-description">
+                        In the second of our conversations with election candidates, Jane and Pete sheeks with Brian Nugent whose party Sovereignty has teamed up with other parties to form The Alliance to Liberate Scotland in a bid to challenge the SNP and the Greens on their "weak stance" on fighting for Scottish independence.
+                    </p>
+                    <div class="youtube-section">
+                        <a href="https://www.youtube.com/watch?v=PGaCh4kaGic&t" target="_blank" rel="noopener noreferrer" class="youtube-preview" aria-label="Watch Episode 3 on YouTube">
+                            <img src="https://img.youtube.com/vi/PGaCh4kaGic/maxresdefault.jpg" alt="Episode 3 YouTube video thumbnail">
+                            <div class="youtube-play">
+                                <span class="youtube-link">
+                                    <span class="youtube-icon">▶</span>
+                                    <span>Watch on YouTube</span>
+                                </span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
                 <div class="episode-card">
                     <div class="episode-header">
                         <div class="episode-title">Sheeks About Shetland — Episode 2</div>
@@ -460,42 +458,36 @@
                         <a href="https://www.youtube.com/watch?v=6TBgBoV8JH0" target="_blank" rel="noopener noreferrer" class="youtube-preview" aria-label="Watch Episode 2 on YouTube">
                             <img src="https://img.youtube.com/vi/6TBgBoV8JH0/maxresdefault.jpg" alt="Episode 2 YouTube video thumbnail">
                             <div class="youtube-play">
-                                <div class="play-button"></div>
+                                <span class="youtube-link">
+                                    <span class="youtube-icon">▶</span>
+                                    <span>Watch on YouTube</span>
+                                </span>
                             </div>
-                        </a>
-                        <a href="https://www.youtube.com/watch?v=6TBgBoV8JH0" target="_blank" rel="noopener noreferrer" class="youtube-link">
-                            <span class="youtube-icon">▶</span>
-                            <span>Watch on YouTube</span>
                         </a>
                     </div>
                 </div>
-            </div>
 
-            <div class="episode-block">
                 <div class="episode-card">
                     <div class="episode-header">
                         <div class="episode-title">Sheeks About Shetland — Episode 1</div>
                         <div class="episode-date">19 Apr 2026</div>
                     </div>
                     <p class="episode-description">
-                        Jane and Pete introduce the first episode of Sheeks About Shetland.
-                    </p>
-                    <p class="episode-description" style="margin-top: 0.8rem;">
-                        Jane is a seasoned broadcaster with BBC Radio Shetland while Pete has reported for The Shetland Times, BBC Radio Shetland and Shetland News. The pair feel there is a gap in the islands' media landscape for longer conversations unrestricted by the time and space limitations of other print and broadcast media.
+                        Jane and Pete introduce the first episode of Sheeks About Shetland. Jane is a seasoned broadcaster with BBC Radio Shetland while Pete has reported for The Shetland Times, BBC Radio Shetland and Shetland News.
                     </p>
                     <div class="youtube-section">
-                        <a href="https://www.youtube.com/watch?v=iRPLMevzL8o" target="_blank" rel="noopener noreferrer" class="youtube-preview" aria-label="Watch on YouTube">
-                            <img src="https://img.youtube.com/vi/iRPLMevzL8o/maxresdefault.jpg" alt="YouTube video thumbnail">
+                        <a href="https://www.youtube.com/watch?v=iRPLMevzL8o" target="_blank" rel="noopener noreferrer" class="youtube-preview" aria-label="Watch Episode 1 on YouTube">
+                            <img src="https://img.youtube.com/vi/iRPLMevzL8o/maxresdefault.jpg" alt="Episode 1 YouTube video thumbnail">
                             <div class="youtube-play">
-                                <div class="play-button"></div>
+                                <span class="youtube-link">
+                                    <span class="youtube-icon">▶</span>
+                                    <span>Watch on YouTube</span>
+                                </span>
                             </div>
-                        </a>
-                        <a href="https://www.youtube.com/watch?v=iRPLMevzL8o" target="_blank" rel="noopener noreferrer" class="youtube-link">
-                            <span class="youtube-icon">▶</span>
-                            <span>Watch on YouTube</span>
                         </a>
                     </div>
                 </div>
+
             </div>
         </section>
     </main>
