@@ -172,7 +172,7 @@
 
         .episodes-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: 1fr;
             gap: 1rem;
             margin-top: 0;
         }
@@ -182,11 +182,16 @@
             background: rgba(255, 255, 255, 0.05);
             border-radius: 18px;
             padding: 1rem;
-            display: flex;
-            flex-direction: column;
+            display: grid;
+            grid-template-columns: 1fr 42%;
+            grid-template-areas:
+                "header video"
+                "desc   video";
+            column-gap: 1.2rem;
         }
 
         .episode-header {
+            grid-area: header;
             display: flex;
             align-items: baseline;
             justify-content: space-between;
@@ -211,10 +216,10 @@
         }
 
         .episode-description {
+            grid-area: desc;
             color: var(--muted);
             line-height: 1.6;
             font-size: 0.88rem;
-            flex-grow: 1;
         }
 
         .episode-description strong {
@@ -251,11 +256,13 @@
         }
 
         .youtube-section {
+            grid-area: video;
             display: flex;
             flex-direction: column;
             align-items: center;
+            justify-content: center;
             gap: 0.7rem;
-            margin-top: 0.9rem;
+            margin-top: 0;
         }
 
         .youtube-preview {
@@ -373,8 +380,16 @@
                 gap: 0.25rem;
             }
 
-            .episodes-grid {
+            .episode-card {
                 grid-template-columns: 1fr;
+                grid-template-areas:
+                    "header"
+                    "desc"
+                    "video";
+            }
+
+            .youtube-section {
+                margin-top: 0.9rem;
             }
 
             .brand-wrap {
@@ -397,12 +412,33 @@
                     <img class="brand-mark" src="brand.png" alt="The Shetland Podcast brand mark">
                 </div>
                 <div class="hero-copy">
-                    <p class="badge"><span class="dot" aria-hidden="true"></span> Episodes 1 to 4 now available</p>
+                    <p class="badge"><span class="dot" aria-hidden="true"></span> Episodes 1 to 5 now available</p>
                     <h1 id="title">The Shetland <span class="accent">Podcast</span></h1>
                 </div>
             </div>
 
             <div class="episodes-grid">
+
+                <div class="episode-card">
+                    <div class="episode-header">
+                        <div class="episode-title">Sheeks About Shetland — Episode 5</div>
+                        <div class="episode-date">6 May 2026</div>
+                    </div>
+                    <p class="episode-description">
+                        With just one day to go before the election of the next MSP for Shetland, Jane and Pete speak with Peter Tait, an independent candidate with deep Shetland roots, who believes that if the monarchy of Scotland was returned north of the border, life would improve for the country as a whole.
+                    </p>
+                    <div class="youtube-section">
+                        <a href="https://www.youtube.com/watch?v=9XfiRS1kA38" target="_blank" rel="noopener noreferrer" class="youtube-preview" aria-label="Watch Episode 5 on YouTube">
+                            <img src="https://img.youtube.com/vi/9XfiRS1kA38/maxresdefault.jpg" alt="Episode 5 YouTube video thumbnail">
+                            <div class="youtube-play">
+                                <span class="youtube-link">
+                                    <span class="youtube-icon">▶</span>
+                                    <span>Watch on YouTube</span>
+                                </span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
 
                 <div class="episode-card">
                     <div class="episode-header">
