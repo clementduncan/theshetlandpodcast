@@ -162,6 +162,28 @@
             color: var(--accent);
         }
 
+        .channel-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            margin-top: 1rem;
+            padding: 0.7rem 1.3rem;
+            background: var(--accent);
+            color: var(--bg-deep);
+            border-radius: 999px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            border: 2px solid var(--accent);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        .channel-link:hover {
+            background: transparent;
+            color: var(--accent);
+        }
+
         .subtitle {
             margin-top: 1rem;
             max-width: 80ch;
@@ -414,6 +436,10 @@
                 <div class="hero-copy">
                     <p class="badge"><span class="dot" aria-hidden="true"></span> Episodes 1 to 5 now available</p>
                     <h1 id="title">The Shetland <span class="accent">Podcast</span></h1>
+                    <a href="https://www.youtube.com/@TheShetlandPodcast" target="_blank" rel="noopener noreferrer" class="channel-link">
+                        <span class="youtube-icon">▶</span>
+                        <span>Watch on YouTube</span>
+                    </a>
                 </div>
             </div>
 
