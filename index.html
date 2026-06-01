@@ -206,14 +206,17 @@
             padding: 1rem;
             display: grid;
             grid-template-columns: 1fr 42%;
-            grid-template-areas:
-                "header video"
-                "desc   video";
+            grid-template-areas: "left video";
             column-gap: 1.2rem;
         }
 
+        .episode-left {
+            grid-area: left;
+            display: flex;
+            flex-direction: column;
+        }
+
         .episode-header {
-            grid-area: header;
             display: flex;
             align-items: baseline;
             justify-content: space-between;
@@ -227,7 +230,7 @@
             color: var(--ink);
             margin-bottom: 0;
             display: flex;
-            align-items: flex-end;
+            align-items: center;
             gap: 0.5rem;
             flex-wrap: wrap;
         }
@@ -240,11 +243,16 @@
             color: var(--accent);
             font-size: 0.72rem;
             font-weight: 700;
-            padding: 0.2rem 0.5rem 0.15rem;
+            padding: 0.25rem 0.5rem;
             border-radius: 6px;
             letter-spacing: 0.04em;
             flex-shrink: 0;
-            line-height: 1;
+            line-height: 14px;
+        }
+
+        .ep-title-text {
+            line-height: 20px;
+            padding-top: 2px;
         }
 
         .episode-date {
@@ -257,7 +265,6 @@
         }
 
         .episode-description {
-            grid-area: desc;
             color: var(--muted);
             line-height: 1.6;
             font-size: 0.88rem;
@@ -424,8 +431,7 @@
             .episode-card {
                 grid-template-columns: 1fr;
                 grid-template-areas:
-                    "header"
-                    "desc"
+                    "left"
                     "video";
             }
 
@@ -465,12 +471,14 @@
             <div class="episodes-grid">
 
                 <div class="episode-card">
-                    <div class="episode-header">                        <div class="episode-title"><span class="ep-num">Episode 10</span>Saving Scalloway Pool</div>
+                    <div class="episode-left">
+                    <div class="episode-header">                        <div class="episode-title"><span class="ep-num">Episode 10</span><span class="ep-title-text">Saving Scalloway Pool</span></div>
                         <div class="episode-date">30 May 2026</div>
                     </div>
                     <p class="episode-description">
                         Jane and Pete are joined by Scalloway residents Sonia Inkster, and Yvonne and Tommy Clark, to discuss the shock closure of the Scalloway swimming pool and the lack of consideration shown for those communities most affected by the decision. The conversation carries a warning about a "race to the bottom" with other communities in Shetland asking themselves, "Wha's next?"
                     </p>
+                    </div>
                     <div class="youtube-section">
                         <a href="https://www.youtube.com/watch?v=wdn5SGRYElY" target="_blank" rel="noopener noreferrer" class="youtube-preview" aria-label="Watch Episode 10 on YouTube">
                             <img src="https://img.youtube.com/vi/wdn5SGRYElY/maxresdefault.jpg" alt="Episode 10 YouTube video thumbnail">
@@ -485,12 +493,14 @@
                 </div>
 
                 <div class="episode-card">
-                    <div class="episode-header">                        <div class="episode-title"><span class="ep-num">Episode 9</span>Daniel Gear</div>
+                    <div class="episode-left">
+                    <div class="episode-header">                        <div class="episode-title"><span class="ep-num">Episode 9</span><span class="ep-title-text">Daniel Gear</span></div>
                         <div class="episode-date">21 May 2026</div>
                     </div>
                     <p class="episode-description">
                         Daniel Gear is many things, but one thing he definitely is, is lightsome. In this podcast Daniel talks about the meaning of "lightsomeness", how it is built into the philosophy of his company Voar Energy and how today's social media environment poses a challenge to that very Shetland approach to the life we share on these remote peerie islands.
                     </p>
+                    </div>
                     <div class="youtube-section">
                         <a href="https://www.youtube.com/watch?v=PQdkUZo0Dfs&t=485s" target="_blank" rel="noopener noreferrer" class="youtube-preview" aria-label="Watch Episode 9 on YouTube">
                             <img src="https://img.youtube.com/vi/PQdkUZo0Dfs/maxresdefault.jpg" alt="Episode 9 YouTube video thumbnail">
@@ -505,12 +515,14 @@
                 </div>
 
                 <div class="episode-card">
-                    <div class="episode-header">                        <div class="episode-title"><span class="ep-num">Episode 8</span>Hannah Mary Goodlad MSP</div>
+                    <div class="episode-left">
+                    <div class="episode-header">                        <div class="episode-title"><span class="ep-num">Episode 8</span><span class="ep-title-text">Hannah Mary Goodlad MSP</span></div>
                         <div class="episode-date">18 May 2026</div>
                     </div>
                     <p class="episode-description">
                         Ten days after being elected as Shetland's first SNP MSP, Hannah Mary Goodlad talks about the experience of being jettisoned into the world of the Scottish Parliament, her hopes and plans for the next five years and the values she will seek to uphold during her tenure representing the isles on the national stage.
                     </p>
+                    </div>
                     <div class="youtube-section">
                         <a href="https://www.youtube.com/watch?v=oIrrrsDpsB4" target="_blank" rel="noopener noreferrer" class="youtube-preview" aria-label="Watch Episode 8 on YouTube">
                             <img src="https://img.youtube.com/vi/oIrrrsDpsB4/maxresdefault.jpg" alt="Episode 8 YouTube video thumbnail">
@@ -525,12 +537,14 @@
                 </div>
 
                 <div class="episode-card">
-                    <div class="episode-header">                        <div class="episode-title"><span class="ep-num">Episode 7</span>Election Special</div>
+                    <div class="episode-left">
+                    <div class="episode-header">                        <div class="episode-title"><span class="ep-num">Episode 7</span><span class="ep-title-text">Election Special</span></div>
                         <div class="episode-date">8 May 2026</div>
                     </div>
                     <p class="episode-description">
                         A historic day in Shetland. Jane and Pete react to Hannah Mary Goodlad of the SNP convincingly ending the 76 year Liberal Democrat hold on the Shetland Islands. She now goes on to Holyrood to give Shetland a voice in the Scottish Government for the first time since Tavish Scott was Minister of Transport two decades ago.
                     </p>
+                    </div>
                     <div class="youtube-section">
                         <a href="https://www.youtube.com/watch?v=M-_giveZOes" target="_blank" rel="noopener noreferrer" class="youtube-preview" aria-label="Watch Episode 7 on YouTube">
                             <img src="https://img.youtube.com/vi/M-_giveZOes/maxresdefault.jpg" alt="Episode 7 YouTube video thumbnail">
@@ -545,13 +559,15 @@
                 </div>
 
                 <div class="episode-card">
+                    <div class="episode-left">
                     <div class="episode-header">
-                        <div class="episode-title"><span class="ep-num">Episode 6</span>The Candidates Verdict</div>
+                        <div class="episode-title"><span class="ep-num">Episode 6</span><span class="ep-title-text">The Candidates Verdict</span></div>
                         <div class="episode-date">6 May 2026</div>
                     </div>
                     <p class="episode-description">
                         With less than 24 hours to go before voting starts in the 2026 Scottish Government elections, it's neck and neck between the SNP and the LibDems. In this episode Jane and Pete share their thoughts about the candidates they have had a sheeks with since the launch of the podcast less than three weeks ago. Conspicuous by her absence is lead candidate Emma Macdonald who, unlike the other four local candidates, could not find a spare hour in her campaign schedule to speak to us. Disappointing.
                     </p>
+                    </div>
                     <div class="youtube-section">
                         <a href="https://www.youtube.com/watch?v=o3FE5N1ndxQ" target="_blank" rel="noopener noreferrer" class="youtube-preview" aria-label="Watch Episode 6 on YouTube">
                             <img src="https://img.youtube.com/vi/o3FE5N1ndxQ/maxresdefault.jpg" alt="Episode 6 YouTube video thumbnail">
@@ -566,13 +582,15 @@
                 </div>
 
                 <div class="episode-card">
+                    <div class="episode-left">
                     <div class="episode-header">
-                        <div class="episode-title"><span class="ep-num">Episode 5</span>Peter Tait</div>
+                        <div class="episode-title"><span class="ep-num">Episode 5</span><span class="ep-title-text">Peter Tait</span></div>
                         <div class="episode-date">6 May 2026</div>
                     </div>
                     <p class="episode-description">
                         With just one day to go before the election of the next MSP for Shetland, Jane and Pete speak with Peter Tait, an independent candidate with deep Shetland roots, who believes that if the monarchy of Scotland was returned north of the border, life would improve for the country as a whole.
                     </p>
+                    </div>
                     <div class="youtube-section">
                         <a href="https://www.youtube.com/watch?v=9XfiRS1kA38" target="_blank" rel="noopener noreferrer" class="youtube-preview" aria-label="Watch Episode 5 on YouTube">
                             <img src="https://img.youtube.com/vi/9XfiRS1kA38/maxresdefault.jpg" alt="Episode 5 YouTube video thumbnail">
@@ -587,13 +605,15 @@
                 </div>
 
                 <div class="episode-card">
+                    <div class="episode-left">
                     <div class="episode-header">
-                        <div class="episode-title"><span class="ep-num">Episode 4</span>Hannah Mary Goodlad</div>
+                        <div class="episode-title"><span class="ep-num">Episode 4</span><span class="ep-title-text">Hannah Mary Goodlad</span></div>
                         <div class="episode-date">30 Apr 2026</div>
                     </div>
                     <p class="episode-description">
                         In our latest conversation with the candidates, Jane and Pete sheeks with Hannah Mary Goodlad of the SNP who has been campaigning to win the Shetland seat from the LibDems for the past year. We cover a lot of ground in this episode, where Hannah Mary outlines her vision of a confident Shetland making the most of its strengths, including its wealth, based on her experience of working in industry, living in Scandinavia and visiting the Faroe Islands.
                     </p>
+                    </div>
                     <div class="youtube-section">
                         <a href="https://www.youtube.com/watch?v=vfxVJDTayY8" target="_blank" rel="noopener noreferrer" class="youtube-preview" aria-label="Watch Episode 4 on YouTube">
                             <img src="https://img.youtube.com/vi/vfxVJDTayY8/maxresdefault.jpg" alt="Episode 4 YouTube video thumbnail">
@@ -608,13 +628,15 @@
                 </div>
 
                 <div class="episode-card">
+                    <div class="episode-left">
                     <div class="episode-header">
-                        <div class="episode-title"><span class="ep-num">Episode 3</span>Brian Nugent</div>
+                        <div class="episode-title"><span class="ep-num">Episode 3</span><span class="ep-title-text">Brian Nugent</span></div>
                         <div class="episode-date">28 Apr 2026</div>
                     </div>
                     <p class="episode-description">
                         In the second of our conversations with election candidates, Jane and Pete sheeks with Brian Nugent whose party Sovereignty has teamed up with other parties to form The Alliance to Liberate Scotland in a bid to challenge the SNP and the Greens on their "weak stance" on fighting for Scottish independence.
                     </p>
+                    </div>
                     <div class="youtube-section">
                         <a href="https://www.youtube.com/watch?v=PGaCh4kaGic&t" target="_blank" rel="noopener noreferrer" class="youtube-preview" aria-label="Watch Episode 3 on YouTube">
                             <img src="https://img.youtube.com/vi/PGaCh4kaGic/maxresdefault.jpg" alt="Episode 3 YouTube video thumbnail">
@@ -629,13 +651,15 @@
                 </div>
 
                 <div class="episode-card">
+                    <div class="episode-left">
                     <div class="episode-header">
-                        <div class="episode-title"><span class="ep-num">Episode 2</span>Alex Armitage</div>
+                        <div class="episode-title"><span class="ep-num">Episode 2</span><span class="ep-title-text">Alex Armitage</span></div>
                         <div class="episode-date">26 Apr 2026</div>
                     </div>
                     <p class="episode-description">
                         In the first of a series of conversations with Shetland's election candidates, Jane and Pete have a sheeks with Alex Armitage of the Scottish Greens about his background, his campaign to build a movement and how he feels about the rise of the far right and the attacks he has come under recently.
                     </p>
+                    </div>
                     <div class="youtube-section">
                         <a href="https://www.youtube.com/watch?v=6TBgBoV8JH0" target="_blank" rel="noopener noreferrer" class="youtube-preview" aria-label="Watch Episode 2 on YouTube">
                             <img src="https://img.youtube.com/vi/6TBgBoV8JH0/maxresdefault.jpg" alt="Episode 2 YouTube video thumbnail">
@@ -650,13 +674,15 @@
                 </div>
 
                 <div class="episode-card">
+                    <div class="episode-left">
                     <div class="episode-header">
-                        <div class="episode-title"><span class="ep-num">Episode 1</span>Introduction to Sheeks About Shetland</div>
+                        <div class="episode-title"><span class="ep-num">Episode 1</span><span class="ep-title-text">Introduction</span></div>
                         <div class="episode-date">19 Apr 2026</div>
                     </div>
                     <p class="episode-description">
                         Jane and Pete introduce the first episode of Sheeks About Shetland. Jane is a seasoned broadcaster with BBC Radio Shetland while Pete has reported for The Shetland Times, BBC Radio Shetland and Shetland News.
                     </p>
+                    </div>
                     <div class="youtube-section">
                         <a href="https://www.youtube.com/watch?v=iRPLMevzL8o" target="_blank" rel="noopener noreferrer" class="youtube-preview" aria-label="Watch Episode 1 on YouTube">
                             <img src="https://img.youtube.com/vi/iRPLMevzL8o/maxresdefault.jpg" alt="Episode 1 YouTube video thumbnail">
