@@ -217,22 +217,11 @@
         }
 
         .episode-header {
-            display: flex;
+            display: grid;
+            grid-template-columns: auto 1fr auto;
             align-items: baseline;
-            justify-content: space-between;
-            gap: 0.6rem;
+            gap: 0.6rem 0.75rem;
             margin-bottom: 0.6rem;
-        }
-
-        .episode-title {
-            font-size: 0.95rem;
-            font-weight: 600;
-            color: var(--ink);
-            margin-bottom: 0;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            flex-wrap: wrap;
         }
 
         .ep-num {
@@ -246,13 +235,15 @@
             padding: 0.25rem 0.5rem;
             border-radius: 6px;
             letter-spacing: 0.04em;
-            flex-shrink: 0;
             line-height: 14px;
         }
 
         .ep-title-text {
-            line-height: 20px;
-            padding-top: 2px;
+            min-width: 0;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--ink);
+            line-height: 1.35;
         }
 
         .episode-date {
@@ -261,7 +252,8 @@
             text-transform: uppercase;
             color: var(--muted);
             white-space: nowrap;
-            flex-shrink: 0;
+            justify-self: end;
+            text-align: right;
         }
 
         .episode-description {
@@ -423,9 +415,22 @@
             }
 
             .episode-header {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 0.6rem;
+                grid-template-columns: auto 1fr;
+                grid-template-areas:
+                    "num date"
+                    "title title";
+            }
+
+            .ep-num {
+                grid-area: num;
+            }
+
+            .ep-title-text {
+                grid-area: title;
+            }
+
+            .episode-date {
+                grid-area: date;
             }
 
             .episode-card {
@@ -472,7 +477,33 @@
 
                 <div class="episode-card">
                     <div class="episode-left">
-                    <div class="episode-header">                        <div class="episode-title"><span class="ep-num">Episode 11</span><span class="ep-title-text">Hans J Marter</span></div>
+                    <div class="episode-header">
+                        <span class="ep-num">Episode 12</span>
+                        <span class="ep-title-text">Minister of Public Finance, Hannah Mary Goodlad MSP</span>
+                        <div class="episode-date">20 June 2026</div>
+                    </div>
+                    <p class="episode-description">
+                        In April we spoke to Hannah Mary Goodlad as SNP candidate for Shetland's seat in the Scottish Parliament. In May we spoke to her as Shetland's first ever SNP MSP. This week we spoke to her as Scotland's Minister of Public Finance. In this conversation with Jane and Pete, Hannah Mary takes us on her rapid learning journey after being "hopscotched" into the corridors of power, the challenges she faces and the aspirations she has to influence policy and bring Shetland values into the heart of Holyrood. Enjoy!
+                    </p>
+                    </div>
+                    <div class="youtube-section">
+                        <a href="https://www.youtube.com/watch?v=lygSTKBOXZo" target="_blank" rel="noopener noreferrer" class="youtube-preview" aria-label="Watch Episode 12 on YouTube">
+                            <img src="https://img.youtube.com/vi/lygSTKBOXZo/maxresdefault.jpg" alt="Episode 12 YouTube video thumbnail">
+                            <div class="youtube-play">
+                                <span class="youtube-link">
+                                    <span class="youtube-icon">▶</span>
+                                    <span>Watch on YouTube</span>
+                                </span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="episode-card">
+                    <div class="episode-left">
+                    <div class="episode-header">
+                        <span class="ep-num">Episode 11</span>
+                        <span class="ep-title-text">Hans J Marter</span>
                         <div class="episode-date">11 June 2026</div>
                     </div>
                     <p class="episode-description">
@@ -494,7 +525,9 @@
 
                 <div class="episode-card">
                     <div class="episode-left">
-                    <div class="episode-header">                        <div class="episode-title"><span class="ep-num">Episode 9</span><span class="ep-title-text">Daniel Gear</span></div>
+                    <div class="episode-header">
+                        <span class="ep-num">Episode 9</span>
+                        <span class="ep-title-text">Daniel Gear</span>
                         <div class="episode-date">21 May 2026</div>
                     </div>
                     <p class="episode-description">
@@ -516,7 +549,9 @@
 
                 <div class="episode-card">
                     <div class="episode-left">
-                    <div class="episode-header">                        <div class="episode-title"><span class="ep-num">Episode 8</span><span class="ep-title-text">Hannah Mary Goodlad MSP</span></div>
+                    <div class="episode-header">
+                        <span class="ep-num">Episode 8</span>
+                        <span class="ep-title-text">Hannah Mary Goodlad MSP</span>
                         <div class="episode-date">18 May 2026</div>
                     </div>
                     <p class="episode-description">
@@ -538,7 +573,9 @@
 
                 <div class="episode-card">
                     <div class="episode-left">
-                    <div class="episode-header">                        <div class="episode-title"><span class="ep-num">Episode 7</span><span class="ep-title-text">Election Special</span></div>
+                    <div class="episode-header">
+                        <span class="ep-num">Episode 7</span>
+                        <span class="ep-title-text">Election Special</span>
                         <div class="episode-date">8 May 2026</div>
                     </div>
                     <p class="episode-description">
@@ -561,7 +598,8 @@
                 <div class="episode-card">
                     <div class="episode-left">
                     <div class="episode-header">
-                        <div class="episode-title"><span class="ep-num">Episode 6</span><span class="ep-title-text">The Candidates Verdict</span></div>
+                        <span class="ep-num">Episode 6</span>
+                        <span class="ep-title-text">The Candidates Verdict</span>
                         <div class="episode-date">6 May 2026</div>
                     </div>
                     <p class="episode-description">
@@ -584,7 +622,8 @@
                 <div class="episode-card">
                     <div class="episode-left">
                     <div class="episode-header">
-                        <div class="episode-title"><span class="ep-num">Episode 5</span><span class="ep-title-text">Peter Tait</span></div>
+                        <span class="ep-num">Episode 5</span>
+                        <span class="ep-title-text">Peter Tait</span>
                         <div class="episode-date">6 May 2026</div>
                     </div>
                     <p class="episode-description">
@@ -607,7 +646,8 @@
                 <div class="episode-card">
                     <div class="episode-left">
                     <div class="episode-header">
-                        <div class="episode-title"><span class="ep-num">Episode 4</span><span class="ep-title-text">Hannah Mary Goodlad</span></div>
+                        <span class="ep-num">Episode 4</span>
+                        <span class="ep-title-text">Hannah Mary Goodlad</span>
                         <div class="episode-date">30 Apr 2026</div>
                     </div>
                     <p class="episode-description">
@@ -630,7 +670,8 @@
                 <div class="episode-card">
                     <div class="episode-left">
                     <div class="episode-header">
-                        <div class="episode-title"><span class="ep-num">Episode 3</span><span class="ep-title-text">Brian Nugent</span></div>
+                        <span class="ep-num">Episode 3</span>
+                        <span class="ep-title-text">Brian Nugent</span>
                         <div class="episode-date">28 Apr 2026</div>
                     </div>
                     <p class="episode-description">
@@ -653,7 +694,8 @@
                 <div class="episode-card">
                     <div class="episode-left">
                     <div class="episode-header">
-                        <div class="episode-title"><span class="ep-num">Episode 2</span><span class="ep-title-text">Alex Armitage</span></div>
+                        <span class="ep-num">Episode 2</span>
+                        <span class="ep-title-text">Alex Armitage</span>
                         <div class="episode-date">26 Apr 2026</div>
                     </div>
                     <p class="episode-description">
@@ -676,7 +718,8 @@
                 <div class="episode-card">
                     <div class="episode-left">
                     <div class="episode-header">
-                        <div class="episode-title"><span class="ep-num">Episode 1</span><span class="ep-title-text">Introduction</span></div>
+                        <span class="ep-num">Episode 1</span>
+                        <span class="ep-title-text">Introduction</span>
                         <div class="episode-date">19 Apr 2026</div>
                     </div>
                     <p class="episode-description">
